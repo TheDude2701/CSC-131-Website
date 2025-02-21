@@ -11,7 +11,7 @@ p{
 /*Banner styles */
 .banner {
     background: url(images/New-York-City-Skyline.webp) no-repeat center center/cover;
-    height: 25vh;
+    height: 31vh;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -155,7 +155,7 @@ p{
 
 /*Content style */
 .home-content {
-    padding-top: 25vh;
+    padding-top: 30vh;
     position: relative;
     display: flex;
     align-items: center;
