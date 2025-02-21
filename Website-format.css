@@ -62,8 +62,9 @@ p{
     color: white;
     padding: 0.8em 1.2em;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     border-radius: 5px;
+    border: 2px solid transparent;
     transition: background 0.3s ease;
 }
 
@@ -111,7 +112,7 @@ p{
     border: 2px solid transparent;
     color: white;
     padding: 0.8em 1.2em;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
