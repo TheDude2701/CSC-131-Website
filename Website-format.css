@@ -1,25 +1,30 @@
-* {
+html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
 }
 
 p{
-    flex: 1;
+    color:#010d1a
+}
+title{
+    font-family: 'Times New Roman', Times, serif;
+    color:#010d1a
 }
 
 /*Banner styles */
 .banner {
-    background: url(images/New-York-City-Skyline.webp) no-repeat center center/cover;
-    height: 31vh;
-    width: 100vw;
+    background: url(images/Anaheim.png) no-repeat center center/cover;
+    height: 30vh;
+    width: 100%;
     display: flex;
     align-items: center;
     flex: column;
     justify-content: center;
     text-align: center;
     color: white;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     margin: 0;
@@ -30,7 +35,7 @@ p{
 .banner-content {
     position: relative;
     z-index: 1 ;
-    padding: 10px;
+    padding: 2em;
 }
 
 .banner::before {
@@ -44,28 +49,83 @@ p{
 }
 
 .banner h1 {
-    font-size: 2rem; /* Adjusted for smaller banner */
+    font-size: 2rem; 
     margin-bottom: 5px;
 }
-/*  nav bar */
+/*Nav bar*/
 .nav-bar {
-    position: absolute;
-    top: 10px; 
-    right: 20px; 
     display: flex;
-    gap: 20px; 
-    z-index: 20;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.8rem;
+    padding-right: 5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
+
+.navbar-links {
+    display: flex; 
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.logo{
+    color:#010d1a;
+    font-size: 1.5em; 
+    text-decoration: none;
+
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        background-color: #007BFF;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1em 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; 
+    }
+
+    .nav-links li {
+        padding: 0.5em 0;
+    }
+
+    /* Hamburger menu button */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2em;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+
 /* Button for nav bar*/
-.btn {
+.btn,.dropdown-btn {
     background: transparent;
-    color: white;
-    padding: 0.8em 1.2em;
+    font-family: 'Times New Roman', Times, serif, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgb(255, 168, 39);
+    padding: 0.5em 1.2em;
     text-decoration: none;
     font-size: 1.2em;
-    border-radius: 5px;
-    border: 2px solid transparent;
+    border-radius: 0.5em;
+    border: 0.2em solid white;
+    display:inline-block;
     transition: background 0.3s ease;
+    cursor: pointer;
 }
 
 /*Adjusted for phone/smaller screens */
@@ -99,25 +159,14 @@ p{
 }
 
 .btn:hover {
-    background: rgba(255, 255, 255, 0.2); 
-    color: white;
+    background-color: rgba(250, 182, 79, 0.2);
+    color: rgb(255, 168, 39);
 }
 
 .dropdown {
-    position: relative; 
+    position: flex; 
 }
-.dropdown-btn {
-    background-color: transparent;
-    outline: none;
-    border: 2px solid transparent;
-    color: white;
-    padding: 0.8em 1.2em;
-    font-size: 1.2em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 2;
-}
+
 
 .arrow{
     margin-left: 8px; 
@@ -125,25 +174,26 @@ p{
 }
 
 .dropdown-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(250, 182, 79, 0.2);
 }
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
     display: none; 
     position: absolute;
-    background-color: transparent;
-    min-width: 140px;
+    background-color: white;
+    min-width: 10em;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 2;
 }
 
 /* Dropdown items */
 .dropdown-content a {
-    color: white;
-    padding: 0.8vw 1vw;
+    color: rgb(255, 168, 39);;
+    padding: 0.5vw 0.8vw;
     text-decoration: none;
     display: block;
+    max-width: 8em;
 }
 
 .dropdown-content a:hover {
@@ -156,20 +206,20 @@ p{
 
 /*Content style */
 .home-content {
-    padding-top: 30vh;
+    padding-top: 1vh;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center; 
-    gap: 20px; 
+    gap: 2em; 
     max-width: 80%; 
     margin: 50px auto; 
 }
 
 .content-image {
-    width: 200px;
+    width: 20em;
     height: auto;
-    border-radius: 10px;
+    border-radius: 1em;
 }
 
 .intro {
@@ -177,5 +227,149 @@ p{
     max-width: 30%;
     text-align: center; 
     font-size: 1.5em;
-    gap: 20px;
+    gap:1em;
+}
+
+/*Homepage partition*/
+.partition {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1em;
+    background-color: #f4f4f4;
+    margin-bottom: 1.5em;
+}
+
+/* Container for blocks */
+.container {
+    display: flex;
+    justify-content: space-around; /* Evenly spaced blocks */
+    column-gap: 1em;
+    padding: 1em;
+}
+
+/* Individual blocks */
+.block {
+    flex: 1; 
+    width:20%;
+    max-width: 20%;
+    margin-right: 1em;
+    background-color: #ddd;
+    border-radius: 1em;
+    text-align: center;
+    font-size:1.5rem;
+}
+.block-btn {
+    display: inline-flex;        
+    background-color: #007BFF;    
+    color: white;               
+    padding: 2em 3em;           
+    border-radius: 1em;           
+    text-decoration: none;       
+    margin-top: 1em;  
+    margin-bottom: 1em;         
+    transition: background-color 0.3s;
+}
+
+.block-btn:hover {
+    background-color: #70baff;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Article containers*/
+.articles-container {
+    display: flex;
+    flex:1;
+    gap: 2rem; 
+    padding: 2rem;
+    margin-top: 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.article-block,.calculator-block {
+    flex:1;
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.8em;
+    background: transparent;
+    box-sizing: border-box;
+    text-align: left;
+    width:45%;
+}
+
+.article-block li {
+    text-align: left;
+}
+
+/* Title at the top of each block */
+.block-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #333;
+    text-align: left;
+}
+
+.article-title {
+    color: rgb(0, 110, 255);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: left;
+}
+
+.article-title:hover {
+    text-decoration: underline;
+}
+
+.article-description {
+    font-size: 1.5em;
+    color: #333;
+    padding-left: 1rem;
+    text-align: left;
+}
+
+.more-articles {
+    display: block;
+    margin-top: 1em;
+    color: rgb(0, 89, 255);
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+}
+
+.more-articles:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .articles-container {
+        flex-direction: column; 
+    }
+
+    .article-block {
+        margin-bottom: 1rem;
+    }
+}
+
+.Financial-content{
+    list-style-type: disc; 
+    padding-left: 0;
+    font-size: 1.2rem; 
+    text-align: center;
+    color:#010d1a;
+    width: fit-content;
+    margin: 0 auto;
+}
+.Financial-content li {
+    text-align: left;
 }
