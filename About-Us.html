@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ron Smithey Financial Services</title>
+    <style>
+        :root {
+            --secondary-color: #D4AF37;
+            --accent-color: #F5F7FA;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif, Georgia;
+            margin: 2em;
+            padding: 2em;
+            color:#010d1a
+        }
+
+        .banner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content {
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 80px 300px;
+        }
+
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 60px 0;
+        }
+
+        .intro-section .content-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+
+        .intro {
+            font-size: 0.7em;
+            color: var(--primary-color);
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 30px;
+            margin: 20px 0;
+            max-width: 600px;
+        }
+
+        .history, .values, .team {
+            margin: 80px 0;
+            padding: 40px;
+            background: var(--accent-color);
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .values-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .values-list li {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .team {
+            text-align: center;
+            background: white;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            padding: 30px;
+            transition: transform 0.3s ease;
+            flex: 1 1 300px; /* Ensure the team members take up equal space */
+            max-width: 400px; /* Limit the maximum width of each team member */
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-photo {
+            width: 100%;
+            max-width: 300px; /* Adjust the size of the team photos */
+            height: auto;
+            border-radius: 100%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .intro-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .history, .values, .team {
+                padding: 30px 20px;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+
+    </style>
+    <link rel="stylesheet" href="Website-format.css">
+</head>
+<body>
+    <header class="banner">
+        <nav class="nav-bar">
+            <a href="Home-Page.html" class="logo">Ron Smithey Financial Services</a>
+            <div class="navbar-links">
+                <a href="Home-Page.html" class="btn">Home</a>
+                <div class="dropdown">
+                    <a href="Services.html"  class="dropdown-btn">Services<span class="arrow">&#x25BC;</span></a>
+                    <div class="dropdown-content">
+                        <a href="Financial-Planning.html">Financial Planning and Advisory</a>
+                        <a href="Corporate-Solutions.html">Corporate Financial Solutions</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Resources<span class="arrow">&#x25BC;</span></button>
+                    <div class="dropdown-content">
+                        <a href="#">Calculator</a>
+                        <a href="#">Client Success Stories</a>
+                        <a href="#">Legal Documentation</a>
+                        <a href="#">Guides and Tutorials</a>
+                        <a href="#">Newsletter</a>
+                    </div>
+                </div>
+                <a href="Calender.html" class="btn">Calendar</a>
+                <a href="Contact-Us.html" class="btn">About Us</a>
+                <div class="dropdown">
+                    <button class="dropdown-btn2">Contact Us<span class="arrow">&#x25BC;</span></button>
+                    <div class="dropdown-content">
+                        <a href="#">Newsletter Sign up</a>
+                        <a href="#">Social Media</a>
+                </div>
+                
+            </div>
+        </nav>
+        <div class="banner-content">
+            <h1>About Us</h1>
+        </div>
+    </header>
+
+    <div class="about-content">
+        <section class="intro-section">
+            <img src="images/team-photo.png" alt="Our Team" class="content-image">
+            <p class="intro">
+                For over two decades, Ron Smithey Financial Services has been a trusted partner in financial excellence. 
+                Founded in 2001, our firm has grown from a local advisory service to a nationally recognized name, 
+                driven by unwavering commitment to client success.
+            </p>
+        </section>
+
+        <section class="history">
+            <h2>Our History</h2>
+            <p>
+                Starting as a small office in California, we’ve expanded our reach while staying true to our core principles: 
+                integrity, transparency, and personalized service. Today, we manage over $10m in assets and serve clients 
+                across the state.
+            </p>
+        </section>
+
+        <section class="values">
+            <h2>Our Values</h2>
+            <ul class="values-list">
+                <li><strong>Client First:</strong> Every decision centers on client prosperity</li>
+                <li><strong>Innovation:</strong> Leveraging cutting-edge financial tools</li>
+                <li><strong>Education:</strong> Empowering clients through knowledge</li>
+            </ul>
+        </section>
+
+        <section class="team">
+            <h2>Meet Our Leadership</h2>
+            <div class="team-member">
+                <img src="images/ron-smithey.png" alt="Ron Smithey" class="team-photo">
+                <h3>Ron Smithey, CFP®</h3>
+                <p>Founder & CEO</p>
+                <p>30+ years in wealth management</p>
+            </div>
+            <div class="team-member">
+                <img src="images/John-Smith.png" alt="John Smith" class="team-photo">
+                <h3>John Smith, CFA®</h3>
+                <p>Chief Investment Officer</p>
+                <p>Specializes in portfolio strategy</p>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href=" #" class="re">Articles</a>
+                    <a href=" #"class="re">Videos</a>
+                    <a href=" #"class="re">Social Media</a>
+                    <a href=" #"class="re">About Us</a>
+                    <a href=" #"class="re">Map</a>
+                </div>
+                <div class="footer-column">
+                    <a href=" #"class="re">Feedback</a>
+                    <a href="Contact-Us.html"class="re">Contact us</a>
+                </div>
+                <div class="footer-column">
+                    <a href=" #"class="re">Disclosures</a>
+                    <a href=" #"class="re">LPL Financial Form CRS</a>
+                </div>
+                <div class="legal-class">
+                    <h4>Securities offered through LPL Financial, Member&nbsp;<a href=""class = "redirect"> FINRA/SIPC.</a></h4>
+                    <h4>The LPL Financial Registered Representative associated with this site can do business in all 50 states. However, cannot cater to clients in certain states.</h4>
+                </div>
+            </div>
+    
+            <div class="social-icons">
+                <a href="https://facebook.com" target = "_blank"><img src="images/facebook-icon.webp" alt="Facebook"></a>
+                <a href="https://linkedin.com" target = "_blank"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="https://instagram.com" target = "_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                <a href="https://youtube.com" target = "_blank"><img src="images/youtube-icon.webp" alt="YouTube"></a>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>© 2025 LPL Financial &nbsp; | &nbsp; <a href = "#">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
