@@ -175,7 +175,7 @@ title{
 .intro {
     display:flex;
     max-width: 30%;
-    text-align: center; 
+    text-align: left; 
     font-size: 1.5em;
     gap:1em;
     color:#010d1a;
@@ -217,6 +217,7 @@ title{
 }
 .block:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 .customer-image{
     display: block;
@@ -256,24 +257,26 @@ title{
 /* Article containers*/
 .articles-container {
     display: flex;
-    flex:1;
-    gap: 2rem; 
-    padding: 5rem;
+    gap: 2rem;
+    padding: 1rem;  
     margin-top: 2rem;
-    margin-left: 5rem;
+    margin-left: 0;  
     justify-content: space-between;
     flex-wrap: wrap;
     text-align: center;
+    width: 100%;  
 }
 
-.article-block,.calculator-block {
-    flex:1;
+.article-block,
+.calculator-block {
+    flex: 1;
     padding: 1rem;
     border: 1px solid transparent;
     border-radius: 0.8em;
     background: transparent;
     box-sizing: border-box;
     text-align: left;
+    margin-bottom: 1em;
 }
 
 .article-block li {
@@ -337,64 +340,138 @@ title{
 }
 
 /*For Phone screen*/
-@media (max-width: 768px) {
-    .nav-links {
+@media screen and (max-width: 768px) {
+   
+    .banner {
+        height: 40vh; 
+        padding-top: 2em; 
+    }
+    .nav-bar {
         flex-direction: column;
-        background-color: #007BFF;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 1em 0;
-        text-align: center;
+        align-items: center;
+        padding-right: 2rem; 
+    }
+    .block {
+        width: 80%; 
+        max-width: 80%;
+        font-size: 1.2em; 
+        margin: 1rem 0; 
     }
 
-    .btn {
-        font-size: 1rem; 
-        padding: 0.8em 1.5em; 
+    /* Stack footer content */
+    .footer-links {
+        flex-direction: column;
     }
-    .content-image{
-        width: 100%;
+
+    /* Adjust font sizes */
+    .block-title {
+        font-size: 1.2em;
     }
+
+    .article-title {
+        font-size: 1.1em;
+    }
+
     .intro {
         flex-direction: column;
-        align-items: center;
+        max-width: 100%;
+        font-size: 1.5em; 
+        gap: 0.5em;
     }
-    h1 {
-        font-size: 5vw; 
+    .article-block,
+    .calculator-block {
+        flex: 1 1 100%; 
+        margin-bottom: 1.5em; 
+        padding: 1.2rem; 
     }
 
-    p {
-        font-size: 5vw;
-        text-align: justify;
+    
+    .article-description,
+    .calculator-description {
+        font-size: 1rem;
+        padding-left: 1rem;
     }
-    title {
-        font-size: 5vw;
+
+    .home-content {
+        flex-direction: column;
+        gap: 1em;
+        padding: 2em 1em; 
+        max-width: 100%;
     }
-    .dropdown-btn {
-        padding: 0.8em 1em;
-        font-size: 3vw;
+
+    .social-icons {
+        margin-top: 1em;
     }
+
+    .footer-bottom {
+        font-size: 0.7rem;
+        margin-top: 1em;
+    }
+
     .container {
         flex-direction: column;
-        align-items: center;
+        padding: 2em;
     }
-    .articles-container {
-        flex-direction: column; 
+    .legal-class {
+        font-size: 0.6em; 
+        padding-left: 1em;  
+        padding-right: 1em; 
+        text-align: left;  
+        width: 100%; 
+        margin-top: 2em;  
+    }
+}
+
+/* Additional adjustments for very small screens (phones in portrait mode) */
+@media screen and (max-width: 480px) {
+    .banner h1 {
+        font-size: 1.5rem; 
     }
 
-    .article-block {
-        margin-bottom: 1rem;
-    }
-
-    .footer{
+    .block {
         width: 100%;
-        padding: 10px;
-    }
-    .legal-class{
-        position: relative;
+        max-width: 100%;
     }
 
+    .intro {
+        font-size: 1em; 
+    }
+
+    .nav-bar {
+        padding: 1rem; 
+    }
+
+    .footer-container {
+        max-width: 90%; 
+    }
+
+    .footer-links {
+        padding-bottom: 1em;
+    }
+
+    .footer-bottom {
+        font-size: 0.6rem;
+    }
+    .article-block,
+    .calculator-block {
+        flex: 1 1 100%; 
+        padding: 1rem;  
+        margin-bottom: 1em; 
+    }
+    .article-description,
+    .calculator-description {
+        font-size: 0.9rem; 
+    }
+
+    .article-title {
+        font-size: 1.1em; 
+    }
+
+    
+    .article-block li,
+    .calculator-block li {
+        padding-left: 1rem; 
+    }
 }
 
 /*Footer style */
@@ -457,20 +534,17 @@ title{
     display: flex;
     flex-direction: column;
 }
-.legal-class{
+legal-class {
     text-align: center;
     font-weight: lighter;
     color: #010d1a;
-    font-size:0.7em;
+    font-size: 0.5em;
     margin-top: 0em;
-    position: absolute;
-    bottom: 5em; 
-    right: 0; 
-    padding-left:2em;
-    padding-right: 10.3em; 
-    text-align: right; 
-    width: 55em;
-
+    padding-left: 2em;
+    padding-right: 2em;  
+    width: 100%;
+    box-sizing: border-box;  
+    position: relative; 
 }
 
 .redirect{
