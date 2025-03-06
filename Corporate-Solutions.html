@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Financial Solutions - Ron Smithey Financial Services</title>
+    <link rel="stylesheet" href="Website-format.css">
+    <style>
+        .service-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .service-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .intro-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+        
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(to right, transparent, #007bff, transparent);
+            margin: 3rem 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: #007bff;
+            margin-top: 0;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* New Styles */
+        .key-details {
+            background-color: #f0f8ff; /* Light blue background */
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .key-details h2 {
+            color: #007bff; /* Blue color for headings */
+        }
+
+        .key-details ul {
+            list-style-type: disc;
+            padding-left: 20px; /* Indent for list items */
+        }
+
+        .key-details li {
+            margin-bottom: 0.5rem; /* Space between list items */
+        }
+
+        .service-title {
+            color: #333;
+            font-size: 1.5rem; /* Larger font for service titles */
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <nav class="nav-bar">
+            <a href="Home-Page.html" class="logo">Ron Smithey Financial Services</a>
+            <div class="navbar-links">
+                <a href="Home-Page.html" class="btn">Home</a>
+                <div class="dropdown">
+                    <a href="Services.html" class="dropdown-btn">Services<span class="arrow">&#x25BC;</span></a>
+                    <div class="dropdown-content">
+                        <a href="Financial-Planning.html">Financial Planning and Advisory</a>
+                        <a href="Corporate-Solutions.html">Corporate Financial Solutions</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Resources<span class="arrow">&#x25BC;</span></button>
+                    <div class="dropdown-content">
+                        <a href="#">Calculator</a>
+                        <a href="#">Client Success Stories</a>
+                        <a href="#">Legal Documentation</a>
+                        <a href="#">Guides and Tutorials</a>
+                        <a href="#">Newsletter</a>
+                    </div>
+                </div>
+                <a href="Calender.html" class="btn">Calendar</a>
+                <a href="Contact-Us.html" class="btn">Contact Us</a>
+            </div>
+        </nav>
+        <div class="banner-content">
+            <h1>Corporate Financial Solutions</h1>
+        </div>
+    </header>
+    
+    <main class="service-container">
+        <section class="service-intro">
+            <img src="Images/executive-meeting.jpg" alt="Executive Meeting" class="intro-image">
+            <h2>Strategic Solutions for Business Success</h2>
+            <p>Ron Smithey Financial Services offers comprehensive financial strategies designed to help businesses of all sizes optimize their financial operations, manage risk, and create sustainable growth.</p>
+        </section>
+        
+        <div class="section-divider"></div>
+        
+        <section>
+            <h2 class="section-title">Our Corporate Financial Services Include:</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3 class="service-title">Financial Planning & Advisory</h3>
+                    <p>Detail personalized planning services including retirement strategies, estate planning, and risk management.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Wealth Management</h3>
+                    <p>Assist clients in growing and preserving wealth through diversified investment strategies and ongoing portfolio management.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Corporate Financial Solutions</h3>
+                    <p>Offer services designed for businesses, including financial forecasting, capital management, and corporate finance advisory.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Tax & Insurance Planning</h3>
+                    <p>Specialized services for tax efficiency and comprehensive insurance planning to protect assets.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Educational Resources</h3>
+                    <p>Provide workshops, articles, and webinars that empower clients with financial literacy and market insights.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+        
+        <section class="key-details">
+            <h2>Key Details</h2>
+            <p><strong>Office Address:</strong> 5101 East La Palma Avenue, Suite #202-D, Anaheim Hills, CA 92807</p>
+            <p><strong>Contact Information:</strong></p>
+            <ul>
+                <li>Work Email: <a href="mailto:ron.smithey@lpl.com">ron.smithey@lpl.com</a></li>
+                <li>Office Phone: 714-202-9858</li>
+                <li>Fax: 714-464-3416</li>
+                <li>Personal Cell: 619-244-0868</li>
+            </ul>
+        </section>
+        
+        <div class="section-divider"></div>
+        
+        <section class="cta-section">
+            <h2>Ready to Discuss Your Corporate Financial Needs?</h2>
+            <p>Contact Ron Smithey for a personalized consultation to discuss your goals.</p>
+            <div>
+                <a href="tel:714-202-9858" class="cta-button">Call 714-202-9858</a>
+                <a href="mailto:ron.smithey@lpl.com" class="cta-button">Email Ron</a>
+            </div>
+        </section>
+
+        <div style="margin-top: 30px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.920293525414!2d-117.82061132439638!3d33.85825227321598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd11f78434df9%3A0x1b6f0c0c2ee3d8c1!2s5101%20E%20La%20Palma%20Ave%20%23202%2C%20Anaheim%2C%20CA%2092807!5e0!3m2!1sen!2sus!4v1710955841295!5m2!1sen!2sus" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> Securities offered through LPL Financial, Member FINRA/SIPC. The LPL Financial Registered Representative associated with this site may only discuss and/or transact securities business with residents of the following states: AR, AZ, CA, FL, TN, ID.</p>
+            <p>While Ron Smithey is licensed to conduct business in all 50 states, certain products and services may not be available in all jurisdictions due to state regulations. Please contact our office to verify availability in your area.</p>
+        </div>
+    </main>
+</body>
+</html> 
