@@ -7,93 +7,263 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="Website-format.css">
     <style>
-        /* Styles specific to the calculator page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
         .calculator-page {
-            width: 80%;
-            /* Adjust as needed */
+            width: 100%;
+            max-width: 800px;
             margin: 20px auto;
-            font-family: sans-serif;
-            /* Choose a suitable font */
-        }
-
-        .calculator-header {
-            background-color: #333;
-            /* Dark background for header */
-            color: white;
+            background-color: #fff;
             padding: 20px;
-            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        .calculator-disclaimer {
-            background-color: yellow;
-            padding: 10px;
+        .calculator-header h1 {
             text-align: center;
+            color: #333;
         }
-
+        .calculator-disclaimer p {
+            font-size: 14px;
+            color: #777;
+            text-align: center;
+            margin-top: 10px;
+        }
         .calculator-section {
             margin-top: 20px;
         }
-
-        .calculator-section h2 {
-            background-color: #f0f0f0;
-            /* Light background for section titles */
-            padding: 10px;
-        }
-
-        .calculator-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
         .calculator-buttons button {
-            background-color: #e0e0e0;
-            /* Button background */
+            background-color: #007bff;
+            color: #fff;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             margin: 5px;
             cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
-
-        /* Optional: Add hover effect to buttons */
         .calculator-buttons button:hover {
-            background-color: #d0d0d0;
+            background-color: #0056b3;
+        }
+        #calculator-form {
+            margin-top: 30px;
+        }
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="number"]:focus, input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #calculator-result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        h3 {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 
 <body>
+    <header class = "banner">
+        <nav class="nav-bar">
+            <a href="Home-Page.html" class="logo">Ron Smithey Financial Services</a>
+            <div class="navbar-links">
+                <a href="Home-Page.html" class="btn">Home</a>
+                <div class="dropdown">
+                    <a href="Services.html"  class="dropdown-btn">Services<span class="arrow">&#x25BC;</span></a>
+                    <div class="dropdown-content">
+                        <a href="Financial-Planning.html">Financial Planning and Advisory</a>
+                        <a href="Corporate-Solutions.html">Corporate Financial Solutions</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Resources<span class="arrow">&#x25BC;</span></button>
+                    <div class="dropdown-content">
+                        <a href="Calculator.html">Calculator</a>
+                        <a href="#">Client Success Stories</a>
+                        <a href="#">Legal Documentation</a>
+                        <a href="#">Guides and Tutorials</a>
+                        <a href="#">Newsletter</a>
+                    </div>
+                </div>
+                <a href="Calender.html" class="btn">Calendar</a>
+                <a href="Contact-Us.html" class="btn">About Us</a>
+                <div class="dropdown">
+                    <button class="dropdown-btn2">Contact Us<span class="arrow">&#x25BC;</span></button>
+                    <div class="dropdown-content">
+                        <a href="#">Newsletter Sign up</a>
+                        <a href="#">Social Media</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class = "banner-content">
+            <h1>Ron Smithey Financial Services</h1>
+        </div>
+    </header>
     <div class="calculator-page">
         <div class="calculator-header">
             <h1>Calculator</h1>
         </div>
         <div class="calculator-disclaimer">
-            <p>These calculators are to be used as convenient hypotheticals to estimate financial returns. Results are
-                not certain.</p>
+            <p>This information is not intended as tax, legal, investment, or retirement advice or recommendations, 
+                and it may not be relied on for the purpose of avoiding any federal tax penalties. You are encouraged to 
+                seek guidance from an independent tax or legal professional. The content is derived from sources believed to 
+                be accurate. Neither the information presented nor any opinion expressed constitutes a solicitation for the purchase or 
+                sale of any security.</p>
         </div>
         <div class="calculator-section">
             <h2>Loans</h2>
             <div class="calculator-buttons">
-                <button>Loan Payoff</button>
-                <button>Home Affordability</button>
-                <button>Mortgage Refinancing</button>
-                <button>Mortgage Acceleration</button>
-                <button>Credit Card Debt</button>
-                <button>Lease Payment</button>
-                <button>Car Affordability</button>
+                <button onclick="switchCalculator('loan_payoff')">Loan Payoff</button>
+                <button onclick="switchCalculator('home_affordability')">Home Affordability</button>
+                
             </div>
         </div>
-        <div class="calculator-section">
-            <h2>Saving and Investing</h2>
-            <div class="calculator-buttons">
-                <button>College Funding</button>
-                <button>Savings Goals</button>
-                <button>Savings Accumulation</button>
-                <button>Taxable Equivalent Yield</button>
-            </div>
+        <div class="calculator-section" id="calculator-form">
+            
         </div>
+        <div id="calculator-result"></div>
     </div>
+    
+    <script>
+        function switchCalculator(calculationType) {
+            document.getElementById('calculator-result').innerHTML = '';
+    
+            // Generate form based on calculation type
+            let formHTML = '';
+            if (calculationType === 'loan_payoff') {
+                formHTML = `
+                    <h3>Loan Payoff</h3>
+                    <input type="number" id="principal" placeholder="Principal">
+                    <input type="number" id="rate" placeholder="Interest Rate (%)">
+                    <input type="number" id="months" placeholder="Months">
+                    <button onclick="calculate('${calculationType}')">Calculate</button>
+                `;
+            } else if (calculationType === 'home_affordability') {
+                formHTML = `
+                    <h3>Home Affordability</h3>
+                    <input type="number" id="income" placeholder="Income">
+                    <input type="number" id="debt" placeholder="Existing Debt">
+                    <input type="number" id="interest_rate" placeholder="Interest Rate (%)">
+                    <input type="number" id="years" placeholder="Years">
+                    <button onclick="calculate('${calculationType}')">Calculate</button>
+                `;
+            }
+    
+            document.getElementById('calculator-form').innerHTML = formHTML;
+        }
+    
+        function calculate(calculationType) {
+            let data = { calculation_type: calculationType };
+    
+            if (calculationType === 'loan_payoff') {
+                data['principal'] = parseFloat(document.getElementById('principal').value);
+                data['rate'] = parseFloat(document.getElementById('rate').value);
+                data['months'] = parseInt(document.getElementById('months').value);
+            } else if (calculationType === 'home_affordability') {
+                data['income'] = parseFloat(document.getElementById('income').value);
+                data['debt'] = parseFloat(document.getElementById('debt').value);
+                data['interest_rate'] = parseFloat(document.getElementById('interest_rate').value);
+                data['years'] = parseInt(document.getElementById('years').value);
+            }
+            if (!data.principal || !data.rate || !data.months || !data.income || !data.debt) {
+                alert("Please fill in all the fields.");
+                return;
+            }
+            console.log(data);
+            fetch('/calculate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(result => {
+                let resultHTML = '';
+                if (result.monthly_payment) {
+                    resultHTML = `
+                        <p>Monthly Payment: $${result.monthly_payment.toFixed(2)}</p>
+                        <p>Total Payment: $${result.total_payment.toFixed(2)}</p>
+                    `;
+                } else if (result.max_loan) {
+                    resultHTML = `
+                        <p>Maximum Loan: $${result.max_loan.toFixed(2)}</p>
+                    `;
+                }
+                document.getElementById('calculator-result').innerHTML = resultHTML;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href=" #" class="re">Articles</a>
+                    <a href=" #"class="re">Videos</a>
+                    <a href=" #"class="re">Social Media</a>
+                    <a href=" #"class="re">About Us</a>
+                    <a href=" #"class="re">Map</a>
+                </div>
+                <div class="footer-column">
+                    <a href=" #"class="re">Feedback</a>
+                    <a href="Contact-Us.html"class="re">Contact us</a>
+                </div>
+                <div class="footer-column">
+                    <a href=" #"class="re">Disclosures</a>
+                    <a href=" #"class="re">LPL Financial Form CRS</a>
+                </div>
+                <div class="legal-class">
+                    <h4>Securities offered through LPL Financial, Member&nbsp;<a href=""class = "redirect"> FINRA/SIPC.</a></h4>
+                    <h4>The LPL Financial Registered Representative associated with this site can do business in all 50 states. However, cannot cater to clients in certain states.</h4>
+                </div>
+            </div>
+    
+            <div class="social-icons">
+                <a href="https://facebook.com" target = "_blank"><img src="images/facebook-icon.webp" alt="Facebook"></a>
+                <a href="https://linkedin.com" target = "_blank"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="https://instagram.com" target = "_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                <a href="https://youtube.com" target = "_blank"><img src="images/youtube-icon.webp" alt="YouTube"></a>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>© 2025 LPL Financial &nbsp; | &nbsp; <a href = "#">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
