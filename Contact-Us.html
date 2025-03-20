@@ -11,6 +11,23 @@
             padding: 2em;
             text-align: center;
         }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .column {
+            flex: 1;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .content-image {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
     <link rel = "stylesheet" href="Website-format.css">
 </head>
@@ -46,7 +63,6 @@
                             <a href="Newsletter-Sign-Up.html">Newsletter Sign Up</a>
                         </div>
                     </div>
-                    
                 </div>
             </nav>
             <div class = "banner-content">
@@ -54,11 +70,37 @@
             </div>
         </header>
         <p></p>
-        <div class="home-contentA">
-            <img src="images/Email.png" alt="Ron Smithey" class="content-image">
-            <p class="form">Inquiry Form</p>
-            <img src="images/phonebook.jpg" alt="Ron Smithey" class="content-image">
-            <p class="form">Contact Details</p>
+        <div class="row" style="max-width: 1000px; margin: 0 auto;">
+            <div class="column">
+                <img src="images/Email.png" alt="Ron Smithey" class="content-image">
+                <h1 class="form">Inquiry Form</h1>
+                    <h3>Have a question or advice?</h3>
+                    <form action="/action_page.php">
+                        <label for="name">First & Last Name: </label>
+                            <input type="text" id="name" name="name"><br><br>
+                        <label for="email">Personal Email: </label>
+                            <input type="text" id="email" name="email"><br><br>
+                        <label for="number">Phone Number (Optional): </label>
+                            <input type="text" id="number" name="number"><br><br>
+                        <label for="write">Write your inquiry:</label>
+                            <textarea id="write" name="write" rows="4" cols="50"></textarea>
+                        <h3>We will try to get back to you as soon as possible!</h3>
+                        <input type="submit" value="Submit">
+                    </form>
+                <p></p>
+            </div>
+            <div class="column">
+                <img src="images/phonebook.jpg" alt="Ron Smithey" class="content-image">
+                <h1 class="form">Contact Details</h1>
+                    <h3>Also located at:</h3>
+                    <p>Mike Rundlett Financial Services</p>
+                    <p>405 South Magnolia Avenue</p>
+                    <p>El Cajon, CA 92020</p>
+                    <p>Phone: <a href="tel:(619) 588-8820">(619) 588-8820</a></p>
+                    <p>Fax: <a href="tel:(619) 588-8810">(619) 588-8810</a></p>
+                    <p>Email: <a href="mailto:ronsmithey@lpl.com">ronsmithey@lpl.com</a></p>
+                    
+            </div>
         </div>
     </div>
     <footer class="footer">
@@ -91,7 +133,6 @@
                 <a href="https://instagram.com" target = "_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
                 <a href="https://youtube.com" target = "_blank"><img src="images/youtube-icon.webp" alt="YouTube"></a>
             </div>
-    
             <div class="footer-bottom">
                 <p>© 2025 LPL Financial &nbsp; | &nbsp; <a href = "#"></a>Sitemap</a></p>
             </div>
