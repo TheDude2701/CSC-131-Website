@@ -1,131 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Resources</title>
-<style>
-  body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0; /* Light grey background */
-  }
-
-  .header {
-    background-color: #333; /* Dark grey header */
-    color: white;
-    padding: 10px 20px;
-    text-align: right;
-  }
-
-  .header a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-  }
-
-  .banner {
-    background-color: #444; /* Slightly lighter dark grey banner */
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Hide overflowing angled background */
-  }
-
-  .banner:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #FFEB3B 50%, transparent 50%); /* Yellow angled background */
-    transform: skewY(-5deg);
-    transform-origin: 0 0;
-    z-index: -1;
-  }
-
-  .banner h1 {
-    font-size: 2.5em;
-    margin: 0;
-  }
-
-  .content {
-    padding: 20px;
-  }
-
-  .section {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .section h2 {
-    margin-top: 0;
-    color: #333;
-  }
-
-  .article-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .article-placeholder {
-    background-color: #eee; /* Light grey placeholder */
-    height: 200px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #888;
-  }
-
-  .article-placeholder.tall {
-    height: 300px; /* Taller placeholder for the second article */
-  }
-
-  .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
-</style>
+    <title>Resources - Ron Smithey Financial Services</title>
+    <link rel="stylesheet" href="Website-format.css">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="nav-bar">
+        <a href="Home-Page.html" class="logo">Ron Smithey Financial Services</a>
+        <div class="navbar-links">
+            <a href="Home-Page.html" class="btn">Home</a>
+            <div class="dropdown">
+                <a href="Services.html" class="dropdown-btn">Services<span class="arrow">&#x25BC;</span></a>
+                <div class="dropdown-content">
+                    <a href="Financial-Planning.html">Financial Planning and Advisory</a>
+                    <a href="Corporate-Solutions.html">Corporate Financial Solutions</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="Resources.html" class="dropdown-btn">Resources<span class="arrow">&#x25BC;</span></a>
+                <div class="dropdown-content">
+                    <a href="Calculator.html">Calculator</a>
+                    <a href="#">Client Success Stories</a>
+                    <a href="#">Legal Documentation</a>
+                    <a href="#">Guides and Tutorials</a>
+                    <a href="#">Newsletter</a>
+                </div>
+            </div>
+            <a href="Calender.html" class="btn">Calendar</a>
+            <a href="About-Us.html" class="btn">About Us</a>
+            <div class="dropdown">
+                <a href="Contact-Us.html" class="dropdown-btn">Contact Us<span class="arrow">&#x25BC;</span></a>
+                <div class="dropdown-content">
+                    <a href="Newsletter-Sign-Up.html">Newsletter Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<div class="header">
-  <a href="#">News</a>
-  <a href="#">Services</a>
-  <a href="#">Resources</a>
-  <a href="#">Calendar</a>
-  <a href="#">Contact Us</a>
-  <a href="#">About Us</a>
-</div>
-
-<div class="banner">
-  <h1>Resources</h1>
-</div>
-
-<div class="content">
-  <div class="section">
-    <h2>Articles</h2>
-    <p>Description of your content...</p>
-
-    <div class="article-grid">
-      <div class="article-placeholder">Article 1</div>
-      <div class="article-placeholder tall">Article 2</div>
-      <div class="article-placeholder">Article 3</div>
+    <!-- Banner -->
+    <div class="banner">
+        <h1>Resources</h1>
     </div>
-  </div>
-</div>
 
-<div class="footer">
-  &copy; Legal details
-</div>
+    <!-- Content -->
+    <div class="content">
+        <div class="section">
+            <h2>Articles</h2>
+            <p>Description of your content...</p>
+            <div class="article-grid">
+                <div class="article-placeholder">Article 1</div>
+                <div class="article-placeholder tall">Article 2</div>
+                <div class="article-placeholder">Article 3</div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="#" class="re">Articles</a>
+                    <a href="#" class="re">Videos</a>
+                    <a href="#" class="re">Social Media</a>
+                    <a href="#" class="re">About Us</a>
+                    <a href="#" class="re">Map</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#" class="re">Feedback</a>
+                    <a href="Contact-Us.html" class="re">Contact Us</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#" class="re">Disclosures</a>
+                    <a href="#" class="re">LPL Financial Form CRS</a>
+                </div>
+                <div class="legal-class">
+                    <h4>Securities offered through LPL Financial, Member <a href="#" class="redirect">FINRA/SIPC.</a></h4>
+                    <h4>The LPL Financial Registered Representative associated with this site can do business in all 50 states. However, cannot cater to clients in certain states.</h4>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><img src="images/facebook-icon.webp" alt="Facebook"></a>
+                <a href="https://linkedin.com" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="https://instagram.com" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                <a href="https://youtube.com" target="_blank"><img src="images/youtube-icon.webp" alt="YouTube"></a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 LPL Financial &nbsp; | &nbsp; <a href="#">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
