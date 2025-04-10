@@ -176,10 +176,10 @@
             } else if (calculationType === 'home_affordability') {
                 formHTML = `
                     <h3>Home Affordability</h3>
-                    <input type="number" id="income" placeholder="Income">
-                    <input type="number" id="debt" placeholder="Existing Debt">
+                    <input type="number" id="income" placeholder="Annual Income">
+                    <input type="number" id="debt" placeholder="Monthly Debt Payments">
                     <input type="number" id="interest_rate" placeholder="Interest Rate (%)">
-                    <input type="number" id="years" placeholder="Years">
+                    <input type="number" id="years" placeholder="Loan Term (Years)">
                     <button onclick="calculate('${calculationType}')">Calculate</button>
                 `;
             }
@@ -188,48 +188,55 @@
         }
     
         function calculate(calculationType) {
-            let data = { calculation_type: calculationType };
+            let resultHTML = '';
     
             if (calculationType === 'loan_payoff') {
-                data['principal'] = parseFloat(document.getElementById('principal').value);
-                data['rate'] = parseFloat(document.getElementById('rate').value);
-                data['months'] = parseInt(document.getElementById('months').value);
-            } else if (calculationType === 'home_affordability') {
-                data['income'] = parseFloat(document.getElementById('income').value);
-                data['debt'] = parseFloat(document.getElementById('debt').value);
-                data['interest_rate'] = parseFloat(document.getElementById('interest_rate').value);
-                data['years'] = parseInt(document.getElementById('years').value);
-            }
-            if (!data.principal || !data.rate || !data.months || !data.income || !data.debt) {
-                alert("Please fill in all the fields.");
-                return;
-            }
-            console.log(data);
-            fetch('/calculate', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-            .then(response => response.json())
-            .then(result => {
-                let resultHTML = '';
-                if (result.monthly_payment) {
-                    resultHTML = `
-                        <p>Monthly Payment: $${result.monthly_payment.toFixed(2)}</p>
-                        <p>Total Payment: $${result.total_payment.toFixed(2)}</p>
-                    `;
-                } else if (result.max_loan) {
-                    resultHTML = `
-                        <p>Maximum Loan: $${result.max_loan.toFixed(2)}</p>
-                    `;
+                const principal = parseFloat(document.getElementById('principal').value);
+                const rate = parseFloat(document.getElementById('rate').value);
+                const months = parseInt(document.getElementById('months').value);
+    
+                if (isNaN(principal) || isNaN(rate) || isNaN(months)) {
+                    alert("Please fill in all the fields.");
+                    return;
                 }
-                document.getElementById('calculator-result').innerHTML = resultHTML;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+    
+                const monthlyRate = rate / 100 / 12;
+                const monthlyPayment = (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -months));
+                const totalPayment = monthlyPayment * months;
+    
+                resultHTML = `
+                    <p>Monthly Payment: $${monthlyPayment.toFixed(2)}</p>
+                    <p>Total Payment: $${totalPayment.toFixed(2)}</p>
+                `;
+    
+            } else if (calculationType === 'home_affordability') {
+                const income = parseFloat(document.getElementById('income').value);
+                const debt = parseFloat(document.getElementById('debt').value);
+                const rate = parseFloat(document.getElementById('interest_rate').value);
+                const years = parseInt(document.getElementById('years').value);
+    
+                if (isNaN(income) || isNaN(debt) || isNaN(rate) || isNaN(years)) {
+                    alert("Please fill in all the fields.");
+                    return;
+                }
+    
+                const monthlyIncome = income / 12;
+                const monthlyRate = rate / 100 / 12;
+                const months = years * 12;
+    
+                // Estimate 28% rule for housing expense
+                const maxHousingPayment = monthlyIncome * 0.28;
+    
+                // Estimate loan amount using reverse amortization formula
+                const maxLoan = maxHousingPayment / (monthlyRate / (1 - Math.pow(1 + monthlyRate, -months)));
+    
+                resultHTML = `
+                    <p>Maximum Affordable Loan: $${maxLoan.toFixed(2)}</p>
+                    <p>Based on max monthly housing payment of: $${maxHousingPayment.toFixed(2)}</p>
+                `;
+            }
+    
+            document.getElementById('calculator-result').innerHTML = resultHTML;
         }
     </script>
     <footer class="footer">
