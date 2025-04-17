@@ -127,7 +127,11 @@
             h2 {
                 font-size: 1.8em;
             }
-       
+            .about-content {
+                padding: 40px 20px; 
+            }
+                
+            
         }
 
     </style>
@@ -137,10 +141,19 @@
     <header class="banner">
         <nav class="nav-bar">
             <a href="Home-Page.html" class="logo">Ron Smithey Financial Services</a>
-            <div class="navbar-links">
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <script>
+                function toggleMenu() {
+                    const nav = document.getElementById('navLinks');
+                    nav.classList.toggle('active');
+                }
+            </script>
+            <div class="navbar-links" id="navLinks">
                 <a href="Home-Page.html" class="btn">Home</a>
                 <div class="dropdown">
-                    <a href="Services.html"  class="dropdown-btn">Services<span class="arrow">&#x25BC;</span></a>
+                    <button class="dropdown-btn">Services<span class="arrow">&#x25BC;</span></button>
                     <div class="dropdown-content">
                         <a href="Financial-Planning.html">Financial Planning and Advisory</a>
                         <a href="Corporate-Solutions.html">Corporate Financial Solutions</a>

@@ -6,6 +6,7 @@ html, body {
     display:flex;
     flex-direction: column;
     font-family: 'Segoe UI', Arial, sans-serif;
+    overflow-x: hidden;
 }
 :root {
     --primary-blue: #0054A4;
@@ -19,6 +20,9 @@ html, body {
     flex:1;
 }
 
+.banner{
+    padding-bottom: 2em;
+}
 /*Banner styles */
 /*.banner {
     height: 30vh;
@@ -189,8 +193,6 @@ html, body {
     margin-right: 1em;
 }
 
-
-
 .btn:hover {
     background-color: rgba(250, 182, 79, 0.2);
     color:#010d1a;
@@ -199,7 +201,6 @@ html, body {
 .dropdown {
     position: flex; 
 }
-
 
 .arrow{
     margin-left: 8px; 
@@ -274,7 +275,7 @@ html, body {
     margin-bottom:0;
 }
 .partitions{
-    padding-top: 2em;
+    padding-top: 0em;
     margin-bottom:0;
 }
 
@@ -430,10 +431,6 @@ html, body {
 /*For Phone screen*/
 @media screen and (max-width: 768px) {
    
-    .banner {
-        height: 40vh; 
-        padding-top: 2em; 
-    }
     .nav-bar {
         flex-direction: column;
         align-items: center;
@@ -445,9 +442,6 @@ html, body {
         align-items: center;
     }
 
-    .paritions{
-        padding-top: 10rem;
-    }
     .btn-primary,
     .btn-secondary {
         width: 50%;
@@ -461,7 +455,7 @@ html, body {
         margin: 1rem 0; 
     }
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     /* Stack footer content */
@@ -491,7 +485,10 @@ html, body {
         padding: 1.2rem; 
     }
 
-    
+    .partitions{
+        padding-top: 0;
+        margin-bottom:0;
+    }
     .article-description,
     .calculator-description {
         font-size: 1rem;
@@ -530,8 +527,8 @@ html, body {
         display: block;
         color: #010d1a;
         margin-left: auto;
-        margin-right: 15%;
-        margin-top: 0%;
+        margin-right: 5%;
+        margin-top: 0;
     }
 
     .navbar-links {
@@ -561,6 +558,7 @@ html, body {
     .banner h1 {
         font-size: 1.5rem; 
     }
+    
 
     .block {
         width: 100%;
