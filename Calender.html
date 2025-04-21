@@ -18,9 +18,16 @@
 
     /* Force the calendar container to show (in case the main CSS hides it) */
     .calendar-container {
-      margin: 450px auto; /* Adjust this value for more or less spacing */
-      max-width: 600px;
-      display: block !important;
+    margin: 2em auto; /* Reduced from 450px */
+    max-width: 1000px;
+    display: block !important;
+    }
+
+    .google-calendar {
+    width: 100%;
+    height: 600px;
+    border: none;
+    margin-top: 20px;
     }
 
     /* Force the table to display */
@@ -98,76 +105,14 @@
   </header>
 
   <main class="calendar-container">
-    <h2>March 2025</h2>
-    <table class="calendar-table">
-      <thead>
-        <tr>
-          <th>Sun</th>
-          <th>Mon</th>
-          <th>Tue</th>
-          <th>Wed</th>
-          <th>Thu</th>
-          <th>Fri</th>
-          <th>Sat</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td>10</td>
-          <td>11</td>
-          <td>12</td>
-          <td>13</td>
-          <td>14</td>
-          <td>15</td>
-        </tr>
-        <tr>
-          <td>16</td>
-          <td>17</td>
-          <td>18</td>
-          <td>19</td>
-          <td>20</td>
-          <td>21</td>
-          <td>22</td>
-        </tr>
-        <tr>
-          <td>23</td>
-          <td>24</td>
-          <td>25</td>
-          <td>26</td>
-          <td>27</td>
-          <td>28</td>
-          <td>29</td>
-        </tr>
-        <tr>
-          <td>30</td>
-          <td>31</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <h2>Upcoming Events</h2>
+    <!-- Replace the URL with your Google Calendar's embed code -->
+    <iframe 
+      src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=America%2FNew_York" 
+      class="google-calendar"
+      frameborder="0" 
+      scrolling="no">
+    </iframe>
   </main>
   <footer class="footer">
     <div class="footer-container">
