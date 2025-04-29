@@ -141,13 +141,13 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="Resources.html" class="dropdown-btn">Resources<span class="arrow">&#x25BC;</span></a>
+                    <button class="dropdown-btn">Resources<span class="arrow">&#x25BC;</span></button>
                     <div class="dropdown-content">
                         <a href="Calculator.html">Calculator</a>
-                        <a href="#">Client Success Stories</a>
-                        <a href="#">Legal Documentation</a>
-                        <a href="#">Guides and Tutorials</a>
-                        <a href="#">Newsletter</a>
+                        <a href="Client-Success.html">Client Success Stories</a>
+                        <a href="Legal-Documentation.html">Legal Documentation</a>
+                        <a href="Guides.html">Guides and Tutorials</a>
+                        <a href="Newsletter.html">Newsletter</a>
                     </div>
                 </div>
                 <a href="Calender.html" class="btn">Calendar</a>
@@ -185,6 +185,8 @@
             <div class="calculator-buttons">
                 <button onclick="switchCalculator('loan_payoff')">Loan Payoff</button>
                 <button onclick="switchCalculator('home_affordability')">Home Affordability</button>
+                <button onclick="switchCalculator('college_funding')">College Funding</button>
+                <button onclick="switchCalculator('credit_card_debt')">Credit Card Debt</button>
                 
             </div>
         </div>
@@ -215,6 +217,22 @@
                     <input type="number" id="debt" placeholder="Monthly Debt Payments">
                     <input type="number" id="interest_rate" placeholder="Interest Rate (%)">
                     <input type="number" id="years" placeholder="Loan Term (Years)">
+                    <button onclick="calculate('${calculationType}')">Calculate</button>
+                `;
+            } else if (calculationType === 'college_funding') {
+                formHTML = `
+                    <h3>College Funding</h3>
+                    <input type="number" id="current_cost" placeholder="Current Annual Cost ($)">
+                    <input type="number" id="years_until_college" placeholder="Years Until College">
+                    <input type="number" id="inflation_rate" placeholder="Annual Inflation Rate (%)">
+                    <button onclick="calculate('${calculationType}')">Calculate</button>
+                `;
+            } else if (calculationType === 'credit_card_debt') {
+                formHTML = `
+                    <h3>Credit Card Debt Payoff</h3>
+                    <input type="number" id="cc_balance" placeholder="Credit Card Balance ($)">
+                    <input type="number" id="cc_rate" placeholder="Annual Interest Rate (%)">
+                    <input type="number" id="cc_payment" placeholder="Monthly Payment ($)">
                     <button onclick="calculate('${calculationType}')">Calculate</button>
                 `;
             }
@@ -258,18 +276,59 @@
                 const monthlyIncome = income / 12;
                 const monthlyRate = rate / 100 / 12;
                 const months = years * 12;
-    
-                // Estimate 28% rule for housing expense
                 const maxHousingPayment = monthlyIncome * 0.28;
-    
-                // Estimate loan amount using reverse amortization formula
                 const maxLoan = maxHousingPayment / (monthlyRate / (1 - Math.pow(1 + monthlyRate, -months)));
     
                 resultHTML = `
                     <p>Maximum Affordable Loan: $${maxLoan.toFixed(2)}</p>
                     <p>Based on max monthly housing payment of: $${maxHousingPayment.toFixed(2)}</p>
                 `;
-            }
+            }else if (calculationType === 'college_funding') {
+                const currentCost = parseFloat(document.getElementById('current_cost').value);
+                const yearsUntil = parseInt(document.getElementById('years_until_college').value);
+                const inflationRate = parseFloat(document.getElementById('inflation_rate').value);
+
+                if (isNaN(currentCost) || isNaN(yearsUntil) || isNaN(inflationRate)) {
+                    alert("Please fill in all the fields.");
+                    return;
+                }
+
+                const futureCost = currentCost * Math.pow(1 + inflationRate / 100, yearsUntil);
+
+                resultHTML = `
+                    <p>Estimated Annual Cost When College Starts: $${futureCost.toFixed(2)}</p>
+                `;
+            }else if (calculationType === 'credit_card_debt') {
+                const balance = parseFloat(document.getElementById('cc_balance').value);
+                const rate = parseFloat(document.getElementById('cc_rate').value);
+                const payment = parseFloat(document.getElementById('cc_payment').value);
+
+                if (isNaN(balance) || isNaN(rate) || isNaN(payment)) {
+                    alert("Please fill in all the fields.");
+                    return;
+                }
+
+                const monthlyRate = rate / 100 / 12;
+                let months = 0;
+                let remainingBalance = balance;
+
+                while (remainingBalance > 0) {
+                    const interest = remainingBalance * monthlyRate;
+                    remainingBalance = remainingBalance + interest - payment;
+                    months++;
+                    if (months > 600) { // Arbitrary limit to prevent infinite loops
+                        resultHTML = `<p>At this payment, it would take over 50 years. Please pay more!</p>`;
+                        break;
+                    }
+                }
+
+                if (remainingBalance <= 0) {
+                    resultHTML = `
+                        <p>Months to Payoff: ${months} months</p>
+                        <p>Approximate Years: ${(months / 12).toFixed(1)} years</p>
+                    `;
+                }
+            } 
     
             document.getElementById('calculator-result').innerHTML = resultHTML;
         }
@@ -278,19 +337,19 @@
         <div class="footer-container">
             <div class="footer-links">
                 <div class="footer-column">
-                    <a href=" #" class="re">Articles</a>
-                    <a href=" #"class="re">Videos</a>
-                    <a href=" #"class="re">Social Media</a>
-                    <a href=" #"class="re">About Us</a>
-                    <a href=" #"class="re">Map</a>
+                    <a href="Newsletter.html" class="re">Articles</a>
+                    <a href="Guides.html"class="re">Videos</a>
+                    <a href="Contact-Us.html"class="re">Social Media</a>
+                    <a href="About-Us.html"class="re">About Us</a>
+                    <a href="Contact-Us.html"class="re">Map</a>
                 </div>
                 <div class="footer-column">
-                    <a href=" #"class="re">Feedback</a>
+                    <a href="Contact-Us.html"class="re">Feedback</a>
                     <a href="Contact-Us.html"class="re">Contact us</a>
                 </div>
                 <div class="footer-column">
-                    <a href=" #"class="re">Disclosures</a>
-                    <a href=" #"class="re">LPL Financial Form CRS</a>
+                    <a href="Legal-Documentation.html"class="re">Disclosures</a>
+                    <a href="Legal-Documentation.html"class="re">LPL Financial Form CRS</a>
                 </div>
                 <div class="legal-class">
                     <h4>Securities offered through LPL Financial, Member&nbsp;<a href=""class = "redirect"> FINRA/SIPC.</a></h4>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ron Smithey Financial Services </title>
+    <style>
+        body {
+          font-family:'Segoe UI', Arial, sans-serif;
+          background-color: #f2f2f2;
+          margin: 0;
+          padding: 20px;
+          color: #333;
+        }
+        h1, h2 {
+          text-align: center;
+        }
+        .guides {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 20px;
+          margin-top: 30px;
+        }
+        .guide-block {
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: transform 0.2s;
+        }
+        .guide-block:hover {
+          transform: translateY(-5px);
+        }
+        .guide-block h3 {
+          margin-top: 0;
+          color: #2c3e50;
+        }
+        .guide-block p {
+          font-size: 0.95em;
+          color: #555;
+        }
+        .tutorial {
+          margin-top: 50px;
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .tutorial iframe {
+          width: 100%;
+          height: 400px;
+          border: none;
+          border-radius: 10px;
+        }
+        .guide-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .guide-block {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .guide-block:hover {
+            transform: translateY(-5px);
+        }
+        section.full-article {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        section.full-article h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        section.full-article p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+      </style>
+    <link rel = "stylesheet" href="Website-format.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="banner">
+        <nav class="nav-bar">
+            <a href="Home-Page.html" class="logo">Ron Smithey Financial Services</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <script>
+                function toggleMenu() {
+                    const nav = document.getElementById('navLinks');
+                    nav.classList.toggle('active');
+                }
+            </script>
+            <div class="navbar-links" id="navLinks">
+                <a href="Home-Page.html" class="btn">Home</a>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Services<span class="arrow">&#x25BC;</span></button>
+                    <div class="dropdown-content">
+                        <a href="Financial-Planning.html">Financial Planning and Advisory</a>
+                        <a href="Corporate-Solutions.html">Corporate Financial Solutions</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Resources<span class="arrow">&#x25BC;</span></button>
+                    <div class="dropdown-content">
+                        <a href="Calculator.html">Calculator</a>
+                        <a href="Client-Success.html">Client Success Stories</a>
+                        <a href="Legal-Documentation.html">Legal Documentation</a>
+                        <a href="Guides.html">Guides and Tutorials</a>
+                        <a href="Newsletter.html">Newsletter</a>
+                    </div>
+                </div>
+                <a href="Calender.html" class="btn">Calendar</a>
+                <a href="About-Us.html" class="btn">About Us</a>
+                <div class="dropdown">
+                    <a href="Contact-Us.html"  class="dropdown-btn">Contact Us<span class="arrow">&#x25BC;</span></a>
+                    <div class="dropdown-content">
+                        <a href="Newsletter-Sign-Up.html">Newsletter Sign Up</a>
+                    </div>
+                </div>  
+            </div>
+          
+            
+        </nav>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Guides and Tutorials</h1>
+                    <p>Strategic guides and tutorials to help you reach your goals.</p>
+                </div>
+            </div>
+        </section>
+        
+    </header>
+    <h1>Financial Advice Center</h1>
+  <h2>Guides and Tutorials</h2>
+
+  <div class="guides">
+
+    <a href="#emergency-fund" class="guide-link">
+        <div class="guide-block">
+          <h3>How to Build an Emergency Fund</h3>
+          <p>Start saving today with these simple steps...</p>
+        </div>
+    </a>
+      
+    <a href="#investing-101" class="guide-link">
+        <div class="guide-block">
+          <h3>Investing 101: A Beginner’s Guide</h3>
+          <p>Learn the basics of investing to grow your wealth...</p>
+        </div>
+    </a>
+    <a href="#retirement" class="guide-link">
+        <div class="guide-block">
+          <h3>Plan for returement</h3>
+          <p>Start saving today with these simple steps...</p>
+        </div>
+    </a>
+      
+    <a href="#house" class="guide-link">
+        <div class="guide-block">
+          <h3>Buying a house</h3>
+          <p>Learn the basics of investing to grow your wealth...</p>
+        </div>
+    </a>
+
+  </div>
+
+  <div class="tutorial">
+    <h2>Watch Our Financial Planning Tutorial</h2>
+    <iframe src="https://www.youtube.com/watch?v=AjWfY7SnMBI" title="Financial Planning Tutorial Video" allowfullscreen></iframe>
+  </div>
+  
+  <section id="emergency-fund" class="full-article">
+    <h2>How to Build an Emergency Fund</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+        
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+  </section>
+  
+  <section id="investing-101" class="full-article">
+    <h2>Investing 101: A Beginner’s Guide</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+        
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+  </section>
+  <section id="retirement" class="full-article">
+    <h2>Preparing for retirement</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+        
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+  </section>
+  
+  <section id="house" class="full-article">
+    <h2>Buying a house</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+        
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+  </section>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="Newsletter.html" class="re">Articles</a>
+                        <a href="Guides.html"class="re">Videos</a>
+                        <a href="Contact-Us.html"class="re">Social Media</a>
+                        <a href="About-Us.html"class="re">About Us</a>
+                        <a href="Contact-Us.html"class="re">Map</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="Contact-Us.html"class="re">Feedback</a>
+                        <a href="Contact-Us.html"class="re">Contact us</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="Legal-Documentation.html"class="re">Disclosures</a>
+                        <a href="Legal-Documentation.html"class="re">LPL Financial Form CRS</a>
+                    </div>
+                    <div class="legal-class">
+                        <h4>Securities offered through LPL Financial, Member&nbsp;<a href=""class = "redirect"> FINRA/SIPC.</a></h4>
+                        <h4>The LPL Financial Registered Representative associated with this site can do business in all 50 states. However, cannot cater to clients in certain states.</h4>
+                    </div>
+                </div>
+        
+                <div class="social-icons">
+                    <a href="https://facebook.com" target = "_blank"><img src="images/facebook-icon.webp" alt="Facebook"></a>
+                    <a href="https://linkedin.com" target = "_blank"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                    <a href="https://instagram.com" target = "_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                    <a href="https://youtube.com" target = "_blank"><img src="images/youtube-icon.webp" alt="YouTube"></a>
+                </div>
+        
+                <div class="footer-bottom">
+                    <p>© 2025 LPL Financial &nbsp; | &nbsp; <a href = "#">Sitemap</a></p>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

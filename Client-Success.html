@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ron Smithey Financial Services </title>
+    <style>
+        body {
+          font-family: 'Segoe UI', Arial, sans-serif;
+          padding: 20px;
+          background: #f9f9f9;
+        }
+        .customer-story {
+          display: flex;
+          align-items: center;
+          background: #ffffff;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          margin-bottom: 20px;
+          padding: 20px;
+          border-radius: 10px;
+        }
+        .customer-story img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 20px;
+        }
+        .review-box {
+          background: #f0f0f0;
+          padding: 15px;
+          border-radius: 8px;
+          flex: 1;
+        }
+        .review-box h3 {
+          margin-top: 0;
+          margin-bottom: 10px;
+          font-size: 1.2em;
+          color: #333;
+        }
+        .review-box p {
+          margin: 0;
+          color: #555;
+        }
+      </style>
+    <link rel = "stylesheet" href="Website-format.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="banner">
+        <nav class="nav-bar">
+            <a href="Home-Page.html" class="logo">Ron Smithey Financial Services</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776;
+            </div>
+            <script>
+                function toggleMenu() {
+                    const nav = document.getElementById('navLinks');
+                    nav.classList.toggle('active');
+                }
+            </script>
+            <div class="navbar-links" id="navLinks">
+                <a href="Home-Page.html" class="btn">Home</a>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Services<span class="arrow">&#x25BC;</span></button>
+                    <div class="dropdown-content">
+                        <a href="Financial-Planning.html">Financial Planning and Advisory</a>
+                        <a href="Corporate-Solutions.html">Corporate Financial Solutions</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Resources<span class="arrow">&#x25BC;</span></button>
+                    <div class="dropdown-content">
+                        <a href="Calculator.html">Calculator</a>
+                        <a href="Client-Success.html">Client Success Stories</a>
+                        <a href="Legal-Documentation.html">Legal Documentation</a>
+                        <a href="Guides.html">Guides and Tutorials</a>
+                        <a href="Newsletter.html">Newsletter</a>
+                    </div>
+                </div>
+                <a href="Calender.html" class="btn">Calendar</a>
+                <a href="About-Us.html" class="btn">About Us</a>
+                <div class="dropdown">
+                    <a href="Contact-Us.html"  class="dropdown-btn">Contact Us<span class="arrow">&#x25BC;</span></a>
+                    <div class="dropdown-content">
+                        <a href="Newsletter-Sign-Up.html">Newsletter Sign Up</a>
+                    </div>
+                </div>  
+            </div>
+          
+            
+        </nav>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Client Success Stories</h1>
+                    <p>Read about how we have helped our clients reach the goals that they wanted</p>
+                </div>
+            </div>
+        </section>
+        
+    </header>
+    <h1>Customer Satisfaction Stories</h1>
+
+    <div class="customer-story">
+        <img src="images/Photo.png" alt="Customer 1">
+        <div class="review-box">
+        <h3>Jane Doe</h3>
+        <p>"This company changed my life! The service was impeccable and I couldn't be happier."</p>
+        </div>
+    </div>
+
+    <div class="customer-story">
+        <img src="images/Photo.png" alt="Customer 2">
+        <div class="review-box">
+        <h3>John Smith</h3>
+        <p>"Fantastic experience from start to finish. Highly recommend to anyone looking for quality."</p>
+        </div>
+    </div>
+
+    <div class="customer-story">
+        <img src="images/Photo.png" alt="Customer 1">
+        <div class="review-box">
+        <h3>Jane Doe</h3>
+        <p>"This company changed my life! The service was impeccable and I couldn't be happier."</p>
+        </div>
+    </div>
+
+    <div class="customer-story">
+        <img src="images/Photo.png" alt="Customer 2">
+        <div class="review-box">
+        <h3>John Smith</h3>
+        <p>"Fantastic experience from start to finish. Highly recommend to anyone looking for quality."</p>
+        </div>
+    </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="Newsletter.html" class="re">Articles</a>
+                        <a href="Guides.html"class="re">Videos</a>
+                        <a href="Contact-Us.html"class="re">Social Media</a>
+                        <a href="About-Us.html"class="re">About Us</a>
+                        <a href="Contact-Us.html"class="re">Map</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="Contact-Us.html"class="re">Feedback</a>
+                        <a href="Contact-Us.html"class="re">Contact us</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="Legal-Documentation.html"class="re">Disclosures</a>
+                        <a href="Legal-Documentation.html"class="re">LPL Financial Form CRS</a>
+                    </div>
+                    <div class="legal-class">
+                        <h4>Securities offered through LPL Financial, Member&nbsp;<a href=""class = "redirect"> FINRA/SIPC.</a></h4>
+                        <h4>The LPL Financial Registered Representative associated with this site can do business in all 50 states. However, cannot cater to clients in certain states.</h4>
+                    </div>
+                </div>
+        
+                <div class="social-icons">
+                    <a href="https://facebook.com" target = "_blank"><img src="images/facebook-icon.webp" alt="Facebook"></a>
+                    <a href="https://linkedin.com" target = "_blank"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                    <a href="https://instagram.com" target = "_blank"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                    <a href="https://youtube.com" target = "_blank"><img src="images/youtube-icon.webp" alt="YouTube"></a>
+                </div>
+        
+                <div class="footer-bottom">
+                    <p>© 2025 LPL Financial &nbsp; | &nbsp; <a href = "#">Sitemap</a></p>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
