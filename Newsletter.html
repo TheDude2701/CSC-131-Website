@@ -151,18 +151,14 @@
 
   <script>
     function showNewsletter(id) {
-      // Hide all newsletters
       var newsletters = document.querySelectorAll('.newsletter');
       newsletters.forEach(function(newsletter) {
         newsletter.classList.remove('active');
       });
-      // Show the clicked one
       document.getElementById(id).classList.add('active');
-      // Scroll smoothly to the newsletter
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
   </script>
-
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-links">

@@ -5,50 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calendar - Ron Smithey Financial Services</title>
 
-  <!-- Link to your existing CSS file -->
   <link rel="stylesheet" href="Website-format.css">
-
   <style>
     body {
-      font-family: 'Times New Roman', Times, serif;
-      margin: 2em;
-      padding: 2em;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Force the calendar container to show (in case the main CSS hides it) */
-    .calendar-container {
-    margin: 2em auto; /* Reduced from 450px */
-    max-width: 1000px;
-    display: block !important;
-    }
-
-    .google-calendar {
-    width: 100%;
-    height: 600px;
-    border: none;
-    margin-top: 20px;
-    }
-
-    /* Force the table to display */
-    .calendar-table {
-      width: 100%;
-      border-collapse: collapse;
-      display: table !important;
-    }
-
-    /* Ensure text is visible and table cells are visible */
-    .calendar-table th,
-    .calendar-table td {
-      border: 1px solid #ddd;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 40px auto;
       padding: 10px;
-      text-align: center;
-      color: black !important;
-      display: table-cell !important;
+      gap: 20px;
     }
 
-    .calendar-table th {
-      background-color: #f2f2f2;
+    .calendar-section {
+      flex: 2;
+      min-width: 300px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 6px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .event-list {
+      padding: 20px;
+    }
+
+    .event {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #e9f0f5;
+      border-left: 5px solid #0077cc;
+      border-radius: 6px;
+    }
+
+    .event-date {
+      min-width: 120px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .event-details {
+      color: #555;
+    }
+
+    .profile-card {
+      flex: 1;
+      min-width: 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .profile-card img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .profile-card h3 {
+      margin: 0 0 10px;
+    }
+
+    .profile-card p {
+      margin: 6px 0;
+      color: #555;
+    }
+
+    .profile-card button {
+      margin: 10px 5px;
+      padding: 10px 15px;
+      background: #0077cc;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .profile-card button:hover {
+      background: #005fa3;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -104,16 +163,37 @@
   </section>
   </header>
 
-  <main class="calendar-container">
-    <h2>Upcoming Events</h2>
-    <!-- Replace the URL with your Google Calendar's embed code -->
-    <iframe 
-      src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=America%2FNew_York" 
-      class="google-calendar"
-      frameborder="0" 
-      scrolling="no">
-    </iframe>
-  </main>
+  <div class="container">
+    <!-- Calendar + Events -->
+    <div class="calendar-section">
+      <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=America%2FNew_York"></iframe>
+
+      <div class="event-list">
+        <div class="event">
+          <div class="event-date">May 10, 2025<br>2:00 PM</div>
+          <div class="event-details">Team Meeting – Zoom link shared in email.</div>
+        </div>
+        <div class="event">
+          <div class="event-date">May 13, 2025<br>9:00 AM</div>
+          <div class="event-details">Product presentation – Main Conference Room.</div>
+        </div>
+        <div class="event">
+          <div class="event-date">May 16, 2025<br>1:00 PM</div>
+          <div class="event-details">Deliverable due – Submit assets by May 15.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile & Contact Info -->
+    <div class="profile-card">
+      <img src="Images/Photo.png" alt="Profile Picture">
+      <h3>Ron Smithey</h3>
+      <p>Email: ronsmithey@lpl.com</p>
+      <p>Phone: (619) 588-8820</p>
+      <button onclick="window.location.href='contact-Us.html'">Contact Me</button>
+      <button onclick="window.location.href='contact-Us.html'">Schedule Appointment</button>
+    </div>
+  </div>
   <footer class="footer">
     <div class="footer-container">
         <div class="footer-links">

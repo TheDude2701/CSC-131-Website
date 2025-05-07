@@ -5,11 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Ron Smithey Financial Services</title>
     <style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 2em;
-            padding: 2em;
-            text-align: center;
+        .home-contentA {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        }
+
+        form {
+        background: white;
+        padding: 25px 30px;
+        margin-bottom: 30px;
+        border-radius: 12px;
+        max-width: 400px;
+        width: 100%;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        text-align: center;
+        }
+
+        label {
+        display: block;
+        margin-bottom: 12px;
+        font-weight: bold;
+        text-align: left;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+        width: 100%;
+        padding: 12px;
+        margin-top: 6px;
+        margin-bottom: 18px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+        }
+
+        button {
+        background-color: #007BFF;
+        color: white;
+        padding: 14px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+        background-color: #0056b3;
         }
     </style>
     <link rel = "stylesheet" href="Website-format.css">
@@ -70,13 +119,46 @@
         <p></p>
         <div class="home-contentA">
             <img src="images/newspapers.png" alt="Ron Smithey" class="content-image">
-            <h1>Sign up now to get the latest news!</h1>
-                <form action="/action_page.php">
-                <label for="email">Email: </label>
-                <input type="text" id="email" name="email"><br><br>
-                <input type="submit" value="Submit">
-                </form>
-                <p></p>
+            <form id="subscribe-form">
+                <label>Email: <input type="email" name="email" required></label><br><br>
+                <button type="submit">Subscribe</button>
+              </form>
+            
+              <h3>Unsubscribe</h3>
+              <form id="unsubscribe-form">
+                <label>Email: <input type="email" name="email" required></label><br><br>
+                <button type="submit">Unsubscribe</button>
+              </form>
+            
+              <script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbzIl1h9BGRgqe8ZnPaCKEA4yyUc-v85yYttjlRcmoUVA06F607amQfT2Bb1Dt_1MIri/exec'; //Apps Script Web App URL here
+            
+                document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  const data = {
+                    action: 'subscribe',
+                    email: this.email.value.trim().toLowerCase()
+                  };
+                  fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(data)
+                  }).then(res => res.text())
+                    .then(alert);
+                });
+            
+                document.getElementById('unsubscribe-form').addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  const data = {
+                    action: 'unsubscribe',
+                    email: this.email.value.trim().toLowerCase()
+                  };
+                  fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(data)
+                  }).then(res => res.text())
+                    .then(alert);
+                });
+              </script>
         </div>
     </div>
     <footer class="footer">

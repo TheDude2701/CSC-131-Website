@@ -89,18 +89,23 @@
                 <img src="images/Email.png" alt="Ron Smithey" class="content-image">
                 <h1 class="form">Inquiry Form</h1>
                     <h3>Have a question or advice?</h3>
-                    <form action="/action_page.php">
+                    <form action="https://formsubmit.co/your-email-address " method="POST">
                         <label for="name">First & Last Name: </label>
-                            <input type="text" id="name" name="name"><br><br>
+                        <input type="text" id="name" name="name" required maxlength="200"><br><br>
+                      
                         <label for="email">Personal Email: </label>
-                            <input type="text" id="email" name="email"><br><br>
+                        <input type="email" id="email" name="email" required maxlength="200"><br><br>
+                      
                         <label for="number">Phone Number (Optional): </label>
-                            <input type="text" id="number" name="number"><br><br>
-                        <label for="write">Write your inquiry:</label>
-                            <textarea id="write" name="write" rows="4" cols="50"></textarea>
-                        <h3>We will try to get back to you as soon as possible!</h3>
+                        <input type="tel" id="number" name="number"><br><br>
+                      
+                        <label for="write">Write your inquiry:</label><br>
+                        <textarea id="write" name="message" rows="4" cols="50" maxlength="200" placeholder="Max 200 characters..."></textarea><br><br>
+                      
+                        <input type="hidden" name="_subject" value="New Inquiry Submission">
+                        <input type="hidden" name="_template" value="box">
                         <input type="submit" value="Submit">
-                    </form>
+                      </form>
                 <p></p>
             </div>
             <div class="column">
