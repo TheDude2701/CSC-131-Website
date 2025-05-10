@@ -36,10 +36,19 @@
             margin: 60px 0;
         }
 
-        .intro-section .content-image {
-            width: 100%;
-            max-width: 600px;
+        .intro-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem; /* space between items */
+            padding: 2rem;
+            flex-wrap: wrap; /* for mobile responsiveness */
+            text-align: center;
+        }
+        .content-image {
+            width: 200px;
             height: auto;
+            flex-shrink: 0; 
         }
 
         .intro {
@@ -51,7 +60,7 @@
             max-width: 600px;
         }
 
-        .history, .values, .team {
+        .history, .values, .team, .background {
             margin: 80px 0;
             padding: 40px;
             background: var(--accent-color);
@@ -191,20 +200,33 @@
 
     <div class="about-content">
         <section class="intro-section">
-            <img src="images/team-photo.png" alt="Our Team" class="content-image">
+            <img src="images/IMG_3459.jpg" alt="Our Team" class="content-image">
             <p class="intro">
                 For over two decades, Ron Smithey Financial Services has been a trusted partner in financial excellence. 
-                Founded in 2001, our firm has grown from a local advisory service to a nationally recognized name, 
+                Beginning in 23 years ago, I seek to bring you the best possible service for your needs, 
                 driven by unwavering commitment to client success.
             </p>
+            <img src="images/IMG_3460.jpg" alt="Office" class = "content-image">
         </section>
 
         <section class="history">
             <h2>Our History</h2>
             <p>
-                Starting as a small office in California, we’ve expanded our reach while staying true to our core principles: 
-                integrity, transparency, and personalized service. Today, we manage over $10m in assets and serve clients 
-                across the state.
+                Ronnie’s journey as a Financial Advisor began over 23 years ago. He entered the financial field because he wanted to help individuals and business owners build, protect, and distribute their financial wealth. After all these years in the industry he continues to be passionate about helping his clients navigate their financial journeys from college saving plans, long term care and retirement.  Ronnie is well versed in all of the latest trends which enables him to successfully guide his clients through the highs and lows of economic cycles. He considers himself a partner in his clients financial journey, and continuously works towards building the strong foundations of a secure financial future. When he is not advising clients he enjoys spending time with his wife and four children. He is an active member in the local church and he volunteers his free time to his local Little League, 
+                having been a baseball coach for over 6 years and serving on the board for three years as the vice president and coaching coordinator. 
+            </p>
+        </section>
+        <section class="background">
+            <h2>Career History</h2>
+            <p>
+                Ronnie has been in the career field of financial advising since 2003.  
+                Currently a Registered Representative with LPL Financial, an independent Broker/ Dealer and Registered Investment Advisor. August 2005-Present
+                Former Financial Advisor for Trilogy Financial Services Inc., a Registered Investment Advisory firm. August 2002-July 2005
+            </p>
+            <p>
+                Education:
+                BA Economics, University of Redlands
+                Minor in Business, University of Redlands
             </p>
         </section>
 
@@ -223,13 +245,7 @@
                 <img src="images/ron-smithey.png" alt="Ron Smithey" class="team-photo">
                 <h3>Ron Smithey, CFP®</h3>
                 <p>Founder & CEO</p>
-                <p>30+ years in wealth management</p>
-            </div>
-            <div class="team-member">
-                <img src="images/John-Smith.png" alt="John Smith" class="team-photo">
-                <h3>John Smith, CFA®</h3>
-                <p>Chief Investment Officer</p>
-                <p>Specializes in portfolio strategy</p>
+                <p>20+ years in wealth management</p>
             </div>
         </section>
     </div>
