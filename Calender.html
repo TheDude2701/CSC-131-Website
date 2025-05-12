@@ -51,17 +51,25 @@
       border-left: 5px solid #0077cc;
       border-radius: 6px;
     }
-
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px; /* Optional: limit width */
+    }
     .event-date {
       min-width: 120px;
       font-weight: bold;
       color: #333;
     }
 
+    .event-date,
     .event-details {
-      color: #555;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      white-space: normal;
+      max-width: 100%;
     }
-
     .profile-card {
       flex: 1;
       min-width: 250px;
@@ -166,8 +174,37 @@
   <div class="container">
     <!-- Calendar + Events -->
     <div class="calendar-section">
-      <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id&ctz=America%2FNew_York"></iframe>
+      <iframe src="https://calendar.google.com/calendar/embed?src=9d6814ced96df496cd3c40bfeca04072f2706239c0bd7102aa2404bb27490823%40group.calendar.google.com&ctz=America%2FLos_Angeles"></iframe>
+      <script>
+        const calendarId = 'CALENDAR_ID@group.calendar.google.com'; // Your calendar link
+        const apiKey = 'API_KEY'; //API key
+        const maxResults = 5;
+        const timeMin = new Date().toISOString();
 
+        fetch(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${timeMin}&maxResults=${maxResults}&singleEvents=true&orderBy=startTime`)
+          .then(response => response.json())
+          .then(data => {
+            const eventList = document.querySelector('.event-list');
+            eventList.innerHTML = '';
+
+            data.items.forEach(event => {
+              const dateTime = new Date(event.start.dateTime || event.start.date).toLocaleString();
+              const title = event.summary;
+              const details = event.description || '';
+
+              const eventDiv = document.createElement('div');
+              eventDiv.className = 'event';
+              eventDiv.innerHTML = `
+                <div class="event-date">${dateTime}</div>
+                <div class="event-details">${title}${details ? ' – ' + details : ''}</div>
+              `;
+              eventList.appendChild(eventDiv);
+            });
+          })
+          .catch(err => {
+            console.error('Failed to load calendar events:', err);
+          });
+      </script>
       <div class="event-list">
         <div class="event">
           <div class="event-date">May 10, 2025<br>2:00 PM</div>
