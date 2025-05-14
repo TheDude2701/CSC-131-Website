@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 import re
 import time
-import PyPDF2
+
 
 def legal_pdf_setup():
     pdf_folder = "./Legal_pdf"
