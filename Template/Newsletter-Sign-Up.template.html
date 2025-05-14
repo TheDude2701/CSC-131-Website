@@ -5,28 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Ron Smithey Financial Services</title>
     <style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 2em;
-            padding: 2em;
-            text-align: center;
+        .home-contentA {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         }
 
-        .row {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+        form {
+        background: white;
+        padding: 25px 30px;
+        margin-bottom: 30px;
+        border-radius: 12px;
+        max-width: 400px;
+        width: 100%;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        text-align: center;
         }
 
-        .column {
-            flex: 1;
-            text-align: center;
-            padding: 1em;
+        label {
+        display: block;
+        margin-bottom: 12px;
+        font-weight: bold;
+        text-align: left;
         }
 
-        .content-image {
-            max-width: 100%;
-            height: auto;
+        input[type="text"],
+        input[type="email"] {
+        width: 100%;
+        padding: 12px;
+        margin-top: 6px;
+        margin-bottom: 18px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+        }
+
+        button {
+        background-color: #007BFF;
+        color: white;
+        padding: 14px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+        background-color: #0056b3;
         }
     </style>
     <link rel = "stylesheet" href="Website-format.css">
@@ -72,54 +104,61 @@
                             <a href="Newsletter-Sign-Up.html">Newsletter Sign Up</a>
                         </div>
                     </div>
+                    
                 </div>
             </nav>
             <section class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <h1>Contact Us</h1>
+                        <h1>Newsletter-Sign-Up</h1>
                         <p>Strategic wealth management and financial planning tailored to your unique goals</p>
                     </div>
                 </div>
             </section>
         </header>
         <p></p>
-        <div class="row" style="max-width: 1000px; margin: 0 auto;">
-            <div class="column">
-                <img src="images/Email.png" alt="Ron Smithey" class="content-image">
-                <h1 class="form">Inquiry Form</h1>
-                    <h3>Have a question or advice?</h3>
-                    <form action="https://formsubmit.co/Enter the email you want to forward inquires to" method="POST"> <!--make sure to your email here-->
-                        <label for="name">First & Last Name: </label>
-                        <input type="text" id="name" name="name" required maxlength="200"><br><br>
-                      
-                        <label for="email">Personal Email: </label>
-                        <input type="email" id="email" name="email" required maxlength="200"><br><br>
-                      
-                        <label for="number">Phone Number (Optional): </label>
-                        <input type="tel" id="number" name="number"><br><br>
-                      
-                        <label for="write">Write your inquiry:</label><br>
-                        <textarea id="write" name="message" rows="4" cols="50" maxlength="200" placeholder="Max 200 characters..."></textarea><br><br>
-                      
-                        <input type="hidden" name="_subject" value="New Inquiry Submission">
-                        <input type="hidden" name="_template" value="box">
-                        <input type="submit" value="Submit">
-                      </form>
-                <p></p>
-            </div>
-            <div class="column">
-                <img src="images/IMG_3456 (1).jpg" alt="Ron Smithey" class="content-image">
-                <h1 class="form">Contact Details</h1>
-                    <h3>Also located at:</h3>
-                    <p>Mike Rundlett Financial Services</p>
-                    <p>405 South Magnolia Avenue</p>
-                    <p>El Cajon, CA 92020</p>
-                    <p>Phone: <a href="tel:(619) 588-8820">(619) 588-8820</a></p>
-                    <p>Fax: <a href="tel:(619) 588-8810">(619) 588-8810</a></p>
-                    <p>Email: <a href="mailto:ronsmithey@lpl.com">ronsmithey@lpl.com</a></p>
-                    
-            </div>
+        <div class="home-contentA">
+            <img src="images/newspapers.png" alt="Ron Smithey" class="content-image">
+            <form id="subscribe-form">
+                <label>Email: <input type="email" name="email" required></label><br><br>
+                <button type="submit">Subscribe</button>
+              </form>
+            
+              <h3>Unsubscribe</h3>
+              <form id="unsubscribe-form">
+                <label>Email: <input type="email" name="email" required></label><br><br>
+                <button type="submit">Unsubscribe</button>
+              </form>
+            
+              <script>
+                const scriptURL = "{{SCRIPT_URL}}"; //Apps Script Web App URL here
+            
+                document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  const data = {
+                    action: 'subscribe',
+                    email: this.email.value.trim().toLowerCase()
+                  };
+                  fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(data)
+                  }).then(res => res.text())
+                    .then(alert);
+                });
+            
+                document.getElementById('unsubscribe-form').addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  const data = {
+                    action: 'unsubscribe',
+                    email: this.email.value.trim().toLowerCase()
+                  };
+                  fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(data)
+                  }).then(res => res.text())
+                    .then(alert);
+                });
+              </script>
         </div>
     </div>
     <footer class="footer">
@@ -152,6 +191,7 @@
                 <a href="https://x.com/RonSmitheyLPL" target = "_blank"><img src="images/X_icon.png" alt="X"></a>
                 <a href="https://www.youtube.com/@RonSmithey" target = "_blank"><img src="images/youtube-icon.webp" alt="YouTube"></a>
             </div>
+    
             <div class="footer-bottom">
                 <p>© 2025 LPL Financial &nbsp; | &nbsp; <a href = "#"></a>Sitemap</a></p>
             </div>

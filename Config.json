@@ -1,0 +1,7 @@
+{
+    "API_KEY": "Google Calendar API KEY HERE",
+    "CALENDAR_ID":"Calendar ID HERE",
+    "CALENDAR_LINK":"GOOGLE CALENDAR LINK HERE",
+    "SCRIPT_URL":"Google sheets script URL HERE",
+    "YOUR_EMAIL":"Enter the email you want to forward inquires to"
+}
